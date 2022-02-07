@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C865DD1279F8C8800C7868A /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 3C865DD0279F8C8800C7868A /* SwiftShell */; };
+		3C865DD3279F8D2D00C7868A /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 3C865DD2279F8D2D00C7868A /* SwiftShell */; };
 		3CEB2A14279F87D4000E99F2 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB2A13279F87D4000E99F2 /* Tests_iOS.swift */; };
 		3CEB2A16279F87D4000E99F2 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB2A15279F87D4000E99F2 /* Tests_iOSLaunchTests.swift */; };
 		3CEB2A20279F87D4000E99F2 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB2A1F279F87D4000E99F2 /* Tests_macOS.swift */; };
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C865DCE279F8C8000C7868A /* ListenIP--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ListenIP--iOS--Info.plist"; sourceTree = "<group>"; };
 		3CEB29FB279F87D2000E99F2 /* ListenIPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenIPApp.swift; sourceTree = "<group>"; };
 		3CEB29FC279F87D2000E99F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CEB29FD279F87D3000E99F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C865DD1279F8C8800C7868A /* SwiftShell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C865DD3279F8D2D00C7868A /* SwiftShell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,14 +88,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C865DCF279F8C8800C7868A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3CEB29F5279F87D2000E99F2 = {
 			isa = PBXGroup;
 			children = (
+				3C865DCE279F8C8000C7868A /* ListenIP--iOS--Info.plist */,
 				3CEB29FA279F87D2000E99F2 /* Shared */,
 				3CEB2A09279F87D4000E99F2 /* macOS */,
 				3CEB2A12279F87D4000E99F2 /* Tests iOS */,
 				3CEB2A1E279F87D4000E99F2 /* Tests macOS */,
 				3CEB2A03279F87D3000E99F2 /* Products */,
+				3C865DCF279F8C8800C7868A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +171,9 @@
 			dependencies = (
 			);
 			name = "ListenIP (iOS)";
+			packageProductDependencies = (
+				3C865DD0279F8C8800C7868A /* SwiftShell */,
+			);
 			productName = "ListenIP (iOS)";
 			productReference = 3CEB2A02279F87D3000E99F2 /* ListenIP.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +191,9 @@
 			dependencies = (
 			);
 			name = "ListenIP (macOS)";
+			packageProductDependencies = (
+				3C865DD2279F8D2D00C7868A /* SwiftShell */,
+			);
 			productName = "ListenIP (macOS)";
 			productReference = 3CEB2A08279F87D4000E99F2 /* ListenIP.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 3CEB29F5279F87D2000E99F2;
+			packageReferences = (
+				"D3FA6C9E-01AD-4DC5-871D-C6AEDB9E5A71" /* XCRemoteSwiftPackageReference "SwiftShell" */,
+			);
 			productRefGroup = 3CEB2A03279F87D3000E99F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -467,6 +490,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ListenIP--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,6 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ListenIP--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,6 +718,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		"D3FA6C9E-01AD-4DC5-871D-C6AEDB9E5A71" /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kareman/SwiftShell.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C865DD0279F8C8800C7868A /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = "D3FA6C9E-01AD-4DC5-871D-C6AEDB9E5A71" /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
+		3C865DD2279F8D2D00C7868A /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = "D3FA6C9E-01AD-4DC5-871D-C6AEDB9E5A71" /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CEB29F6279F87D2000E99F2 /* Project object */;
 }
