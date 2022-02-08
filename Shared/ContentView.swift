@@ -27,6 +27,7 @@ struct ContentView: View {
 
 @MainActor
 class ContentViewModel: ObservableObject {
+    @AppStorage("jenkins_ip") var ip:String = ""
     @Published var text = "";
     @Published var webHookURL = "" {
         didSet {
@@ -56,10 +57,13 @@ class ContentViewModel: ObservableObject {
             let contents = output.stdout.components(separatedBy: "\n\t")
             for content in contents {
                 if (content.contains("inet ") && !content.contains("127.0.0.1")) {
-                    if (self.webHookIsOk() && content != self.text) {
-                        self.text = content
-                        self.sendWebHook(content: content)
+                    let ip = content.components(separatedBy: " ")[1]
+                    self.text = content
+                    if (self.webHookIsOk() && ip != self.ip) {
+                        self.ip = ip
+                        self.sendWebHook(content: ip)
                     }
+                    break;
                 }
             }
         })
@@ -69,8 +73,7 @@ class ContentViewModel: ObservableObject {
     
     func sendWebHook(content:String) {
         guard webHookIsOk() else {return}
-        let ip = content.components(separatedBy: " ")[1]
-        let messageString:[String:String] = ["content":"最新Jenkins打包地址:http://\(ip):8080 账户:king 密码:1990823"]
+        let messageString:[String:String] = ["content":"最新Jenkins打包地址:http://\(content):8080 账户:king 密码:1990823"]
         guard let url = URL(string: webHookURL) else {
             return
         }
